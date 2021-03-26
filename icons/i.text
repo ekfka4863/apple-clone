@@ -4,3 +4,8 @@
 <i class="fas fa-tablet"></i> //ipad
 <i class="fas fa-music"></i> // music
 <i class="fas fa-bars"></i>  // menu-bar
+
+
+--------- options: shopping cart, shopping bag ---------
+<i class="fas fa-shopping-cart"></i> // shopping cart 
+<i class="fas fa-shopping-bag"></i> // shopping bag  
