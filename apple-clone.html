@@ -6,6 +6,7 @@
     <title>Apple Clone</title>
 </head>
 <body>
+    <!-- 해더 -->
     <header class='header'>
         <h1 class='a11y-hidden'></h1>
         <nav class="header-nav">
@@ -17,6 +18,9 @@
                     <a href="#">hamburger bar</a>
                     <ul class="header-nav-menu-list">
                         <input type="text"/>
+                        <!-- 질문: 여기 label이나 버튼태그 필요없을까요?? 
+                            아래 메인 파트에서는 검색창을 폼태그 안에 감싼뒤 인풋과 버튼을 세트로 줬는데...!!
+                        이번꺼는 안그래도 될까용??-->
                         <li><a href="#">Mac</a></li>
                         <li><a href="#">iPad</a></li>
                         <li><a href="#">iPhone</a></li>
@@ -31,6 +35,7 @@
             </ul>
         </nav>
     </header>
+    <!-- 메인 -->
     <main class='main'>
         <section class="main-service-container">
             <div class="main-service-banner">
@@ -44,6 +49,7 @@
             </div>
             <div class="main-service">
                 <ul class="main-service-products">
+                    <!-- 질문: 여기서 ul 태그가 porducts면 아래 li 태그는 product로 끝내는게 좋을까유? -->
                     <li class="main-service-products">
                         <a href="#"><span>iPhone</span></a>
                     </li>
@@ -66,6 +72,7 @@
             </div>
             <div class="sub-service">
                 <ul class="sub-service-products">
+                    <!-- 질문: 여기서 ul 태그가 porducts면 아래 li 태그는 product로 끝내는게 좋을까유? -->
                     <li class="sub-service-products">
                         <a href="#"><span>Apple ID 또는 암호를 잊어버림</span></a>
                     </li>
@@ -113,6 +120,7 @@
             </div>
         </section>
     </main>
+    <!-- 푸터 -->
     <footer class='footer'>
         <div class="footer-header">
             <a href="#"></a><span>지원</span>
