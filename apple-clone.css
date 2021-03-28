@@ -22,86 +22,9 @@ li{
 
 
 /* 해더 */
-.header{
-	background-color: rgba(0, 0, 0, 0.850);
-	padding-top: 0;
-}
-
-/* ul 태그에 마진과 패딩을 없앤다... 그리고 리스트 스타일은 none으로 해서 동그라미둘을 없애줌 */
-.header-nav-container{
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-	display: flex;
-	/* align-items: ; */
-	justify-content: space-between;
-	/* 아이콘들이 기준점으로 삼을 부모요소임으로 position: relative; */
-	/* position: relative; */
-	
-}
-.header-nav-container > li {
-	/* display: inline-block; */
-	/* 아이콘이 차지하는 부피를 widthL 14px; 로 가로 14px으로 고정! */
-	width: 14px;
-	height: 19px;
-}
-/* .header-nav-container > i {
-	width: 14px;
-} */
-
-.fa-shopping-bag, .fa-bars, .fa-apple{
-	color: rgba(255, 255, 255, 0.822);
-}
-
-.fa-bars{
-
-}
-.fa-shopping-bag{
-
-}
-
-
-
 
 
 /* 메인 */
-.main{
-	background-color: aqua;
-	/* .image-main-service-banner가 부모 요소인 .main 을 position 의 기준점으로 삼을 수 있게... */
-	position: relative;	
-}
-.main-service-banner > h2{
-	display: inline-block;
-	position: absolute;
-	top: 340px;
-	left: 50%;
-}
-. 
 
-/* 메인 섹션 - images */
-.image-main-service-banner{
-	/* background-image: url('./images/image-for-main-service-banner.jpeg');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover; */
-	background: url('./images/image-for-main-service-banner.jpeg') no-repeat center/cover;
-	width: 100%;
-	/* 원래 사이트에서는 가장 작은 뷰포트에서 배너의 크기 400 x 230 (280 일수도...) */
-	/* position: absolute;  */
-	min-height: 280px;
-	/* 아래 속성은 position 속성값이 absolute 또는 fixed 일째만 적용된다 */
-	/* clip: rect(200px 100px, 100px, 100px); */
 
-}
-
-/* 메인 섹션 - 검색창 */
-.search-box{
-	width: 340px;
-	height: 45px;
-}
-
-/* 메인 섹션 - icons */
-.sub-service-product s-icons{
-	width: 40px;
-	height: 40px;
-}
+/* 푸터 */
