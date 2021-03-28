@@ -17,10 +17,20 @@
                 <li class="header-nav-menu">
                     <a href="#">hamburger bar</a>
                     <ul class="header-nav-menu-list">
-                        <input type="text"/>
-                        <!-- 질문: 여기 label이나 버튼태그 필요없을까요?? 
+                        <input id="header-nav-search-engine" type="text" placeholder="지원 검색하기" />
+                        <!-- 질문 1: 여기 label이나 버튼태그 필요없을까요?? 
                             아래 메인 파트에서는 검색창을 폼태그 안에 감싼뒤 인풋과 버튼을 세트로 줬는데...!!
-                        이번꺼는 안그래도 될까용??-->
+                        이번꺼는 안그래도 될까용??  
+                            해결안: label 태그를 넣는 것을 제안! 두개의 태그를 연결할 떄 필요한 
+                        id값은 임의로 제가 넣었어요...-->
+                        <!-- 질문 2: label을 넣고 검색 엔진에 돋보기 아이콘을 이미지 태그로 넣어야하는데 이것은 어떻게 처리할까요? 아래와 같이...??
+                        cf. https://developer.mozilla.org/ko/docs/Web/HTML/Element/label 
+                        cf. https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_searchbar3
+                            해결안: <i class="fas fa-search"></i> 으로 대체하기 
+                            두번째 해결안: 버튼을 이미지로 변경(replacing button with image)할 수 있다 ...
+                        cf. https://stackoverflow.com/questions/11380776/replacing-button-with-image  -->
+                        <!-- <label for="header-nav-search-engine" class="a11y-hidden"><img src="./icons/search-icon.png" alt="검색 엔진 영역">지원 검색하기</label> -->
+                        <label for="header-nav-search-engine" class="a11y-hidden"><i class="fas fa-search"></i>지원 검색하기</label>
                         <li><a href="#">Mac</a></li>
                         <li><a href="#">iPad</a></li>
                         <li><a href="#">iPhone</a></li>
@@ -49,40 +59,42 @@
             </div>
             <div class="main-service">
                 <ul class="main-service-products">
-                    <!-- 질문: 여기서 ul 태그가 porducts면 아래 li 태그는 product로 끝내는게 좋을까유? -->
-                    <li class="main-service-products">
+                    <!-- 질문: 여기서 ul 태그가 porducts면 아래 li 태그는 product로 끝내는게 좋을까유? 
+                        해결안: li 태그에 있는 class 값은 지우자요! -->
+                    <li>
                         <a href="#"><span>iPhone</span></a>
                     </li>
-                    <li class="main-service-products">
+                    <li>
                         <a href="#"><span>Mac</span></a>
                     </li>
-                    <li class="main-service-products">
+                    <li>
                         <a href="#"><span>iPad</span></a>
                     </li>
-                    <li class="main-service-products">
+                    <li>
                         <a href="#"><span>Watch</span></a>
                     </li>
-                    <li class="main-service-products">
+                    <li>
                         <a href="#"><span>Accessory</span></a>
                     </li>
-                    <li class="main-service-products">
+                    <li>
                         <a href="#"><span>Music</span></a>
                     </li>
                 </ul>
             </div>
             <div class="sub-service">
                 <ul class="sub-service-products">
-                    <!-- 질문: 여기서 ul 태그가 porducts면 아래 li 태그는 product로 끝내는게 좋을까유? -->
-                    <li class="sub-service-products">
+                    <!-- 질문: 여기서 ul 태그가 porducts면 아래 li 태그는 product로 끝내는게 좋을까유? 
+                        해결안: li 태그에 있는 class 값은 지우자요! -->
+                    <li>
                         <a href="#"><span>Apple ID 또는 암호를 잊어버림</span></a>
                     </li>
-                    <li class="sub-service-products">
+                    <li>
                         <a href="#"><span>Apple 수리</span></a>
                     </li>
-                    <li class="sub-service-products">
+                    <li>
                         <a href="#"><span>AirPods 분실 또는 유실</span></a>
                     </li>
-                    <li class="sub-service-products">
+                    <li>
                         <a href="#"><span>청구 및 구독</span></a>
                     </li>
                 </ul>
@@ -128,7 +140,6 @@
         <div class="footer-menu">
             <ul class="footer-menu-list">
                 <li>
-                    <!-- 아래의 코드를 div로 감쌀지는 확인할 필요 있습니다! -->
                     <a href="#"><h4>제품 지원</h4><span>+</span></a>
                     <ul>
                         <li><a href="#">iPhone</a></li>
