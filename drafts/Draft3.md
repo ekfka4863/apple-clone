@@ -22,7 +22,7 @@ date: 2021-03-28-Sunday
 
 ## 오늘의 아이디어
 
-<video autoplay controls loop muted preload="bbb">
+<video autoplay controls loop muted preload="auto">
   <source src="./images/애플 고객지원 사이트 클론 - 문제점 발견 관련 동영상" type="video">
   애플 고객지원 사이트 클론 - 문제점 발견 관련 동영상 
 </video>
