@@ -22,10 +22,18 @@ date: 2021-03-28-Sunday
 
 ## 오늘의 아이디어
 
-<video autoplay controls loop muted preload="auto">
-  <source src="./images/애플 고객지원 사이트 클론 - 문제점 발견 관련 동영상" type="video">
+<video style="width:100%" autoplay controls muted >
+  <source src="./images/video.mp4" type="video/mp4">
+	<source src="./images/video.webm"
+            type="video/mp4">
   애플 고객지원 사이트 클론 - 문제점 발견 관련 동영상 
 </video>
+
+
+<!-- <video style="width:100%" controls preload="auto">
+  <source src="video.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video> -->
 
 👉 애플 공식 지원 페이지에서 뷰포트를 작게 했을 때는 나타나지 않는 문제점이지만, 뷰포트를 크게 했을 때는 위의 비디오에서 확인할 수 있듯이 가시적으로 보이는 텍스트 영역에 비해 실제로 clickable 한 영역이 다소 넓어서 사용자가 실수로 클릭하여 다른 페이지로 넘어갈 수 있다는 문제점이 제기되었다. 
 
