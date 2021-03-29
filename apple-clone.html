@@ -6,6 +6,7 @@
     <title>Apple Clone</title>
 </head>
 <body>
+    <!-- 해더 -->
     <header class='header'>
         <h1 class='a11y-hidden'></h1>
         <nav class="header-nav">
@@ -16,7 +17,20 @@
                 <li class="header-nav-menu">
                     <a href="#">hamburger bar</a>
                     <ul class="header-nav-menu-list">
-                        <input type="text"/>
+                        <input id="header-nav-search-engine" type="text" placeholder="지원 검색하기" />
+                        <!-- 질문 1: 여기 label이나 버튼태그 필요없을까요?? 
+                            아래 메인 파트에서는 검색창을 폼태그 안에 감싼뒤 인풋과 버튼을 세트로 줬는데...!!
+                        이번꺼는 안그래도 될까용??  
+                            해결안: label 태그를 넣는 것을 제안! 두개의 태그를 연결할 떄 필요한 
+                        id값은 임의로 제가 넣었어요...-->
+                        <!-- 질문 2: label을 넣고 검색 엔진에 돋보기 아이콘을 이미지 태그로 넣어야하는데 이것은 어떻게 처리할까요? 아래와 같이...??
+                        cf. https://developer.mozilla.org/ko/docs/Web/HTML/Element/label 
+                        cf. https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_searchbar3
+                            해결안: <i class="fas fa-search"></i> 으로 대체하기 
+                            두번째 해결안: 버튼을 이미지로 변경(replacing button with image)할 수 있다 ...
+                        cf. https://stackoverflow.com/questions/11380776/replacing-button-with-image  -->
+                        <!-- <label for="header-nav-search-engine" class="a11y-hidden"><img src="./icons/search-icon.png" alt="검색 엔진 영역">지원 검색하기</label> -->
+                        <label for="header-nav-search-engine" class="a11y-hidden"><i class="fas fa-search"></i>지원 검색하기</label>
                         <li><a href="#">Mac</a></li>
                         <li><a href="#">iPad</a></li>
                         <li><a href="#">iPhone</a></li>
@@ -31,6 +45,7 @@
             </ul>
         </nav>
     </header>
+    <!-- 메인 -->
     <main class='main'>
         <section class="main-service-container">
             <div class="main-service-banner">
@@ -40,42 +55,46 @@
                         <input type="text"/><button></button>
                     </fieldset>
                 </form>
-                <img src="#" alt="service-banner-image">
+                <div class="main-service-banner-image"></div>
             </div>
             <div class="main-service">
                 <ul class="main-service-products">
-                    <li class="main-service-products">
+                    <!-- 질문3: 여기서 ul 태그가 porducts면 아래 li 태그는 product로 끝내는게 좋을까유? 
+                        해결안: li 태그에 있는 class 값은 지우자요! -->
+                    <li>
                         <a href="#"><span>iPhone</span></a>
                     </li>
-                    <li class="main-service-products">
+                    <li>
                         <a href="#"><span>Mac</span></a>
                     </li>
-                    <li class="main-service-products">
+                    <li>
                         <a href="#"><span>iPad</span></a>
                     </li>
-                    <li class="main-service-products">
+                    <li>
                         <a href="#"><span>Watch</span></a>
                     </li>
-                    <li class="main-service-products">
+                    <li>
                         <a href="#"><span>Accessory</span></a>
                     </li>
-                    <li class="main-service-products">
+                    <li>
                         <a href="#"><span>Music</span></a>
                     </li>
                 </ul>
             </div>
             <div class="sub-service">
                 <ul class="sub-service-products">
-                    <li class="sub-service-products">
+                    <!-- 질문3: 여기서 ul 태그가 porducts면 아래 li 태그는 product로 끝내는게 좋을까유? 
+                        해결안: li 태그에 있는 class 값은 지우자요! -->
+                    <li>
                         <a href="#"><span>Apple ID 또는 암호를 잊어버림</span></a>
                     </li>
-                    <li class="sub-service-products">
+                    <li>
                         <a href="#"><span>Apple 수리</span></a>
                     </li>
-                    <li class="sub-service-products">
+                    <li>
                         <a href="#"><span>AirPods 분실 또는 유실</span></a>
                     </li>
-                    <li class="sub-service-products">
+                    <li>
                         <a href="#"><span>청구 및 구독</span></a>
                     </li>
                 </ul>
@@ -87,9 +106,10 @@
                 <p>제품을 선택하고 가장 적합한 해결 방법을 확인할 수 있습니다.</p>
                 <a href="#">지금 시작하기<span>></span></a>
                 <a href="#">Apple 지원 앱 다운로드하기<span>></span></a>
+                <div class="main-support-banner-image"></div>
             </div>
             <div class="main-support-container-applecare">
-                <img src="#" alt="apple-care">
+                <div class="main-support-image-wrapper"><img src="#" alt="apple-care"></div>
                 <h3>Apple 전문가의 서비스 및 지원</h3>
                 <p>AppleCare 제품은 Apple 전문가의 기술 지원 및 추가 하드웨어 서비스 옵션을 제공합니다.</p>
                 <a href="#">AppleCare 플랜에 대해 알아보기<span>></span></a>
@@ -112,6 +132,7 @@
             </div>
         </section>
     </main>
+    <!-- 푸터 -->
     <footer class='footer'>
         <div class="footer-header">
             <a href="#"></a><span>지원</span>
@@ -119,7 +140,6 @@
         <div class="footer-menu">
             <ul class="footer-menu-list">
                 <li>
-                    <!-- 아래의 코드를 div로 감쌀지는 확인할 필요 있습니다! -->
                     <a href="#"><h4>제품 지원</h4><span>+</span></a>
                     <ul>
                         <li><a href="#">iPhone</a></li>
