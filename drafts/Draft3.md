@@ -22,13 +22,15 @@ date: 2021-03-28-Sunday
 
 ## 오늘의 아이디어
 
-<video style="width:100%" autoplay controls muted >
-  <source src="./images/video.mp4" type="video/mp4">
-	<source src="./images/video.webm"
-            type="video/mp4">
-  애플 고객지원 사이트 클론 - 문제점 발견 관련 동영상 
-</video>
 
+<div id="videoDiv">
+	<video style="width:100%" autoplay controls muted src="/Users/dayepark/Documents/dev/apple-clone/drafts/images/video.webm">
+		<!-- <source src="./images/video.mp4" type="video/mp4"> -->
+		<!-- <source src="./images/video.webm"
+							type="video/mp4"> -->
+		애플 고객지원 사이트 클론 - 문제점 발견 관련 동영상 
+	</video>
+</div>
 
 <!-- <video style="width:100%" controls preload="auto">
   <source src="video.mp4" type="video/mp4">
