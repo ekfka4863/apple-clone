@@ -1,9 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- 아래의 lang 은 접근성 측면에서 권장사항! -->
+<html lang="ko-KR">
 <head>
+    <!-- title -> 페이지의 목적을 설명하는 타이틀을 제공. 스크린리더 사용자가 탐색시 유용한 정보를 빠르게 얻어갈 수 있도록 ... 해당 웹사이트가 어떤 웹사이트일지 title만 보고 유추할 수 있도록 ... -->
+    <title>애플 공식 홈페이지 - 고객지원 페이지</title>
+    <!-- 웹 페이지의 메타 데이터를 명시하는 meta 태그의 사용! 
+    cf. https://blog-pleur.tistory.com/21 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apple Clone</title>
+    <!-- HTML5 이후로 사용되고 있으며 인터넷 익스플로러에서 화면이 깨지는 걸 사전에 방지하기 위해 사용한다 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 웹사이트를 제작할 때 어떤 툴을 사용했는지 표시 -->
+    <meta name="Generator" content="VSCode" />
+    <!-- 웹사이트의 제작자를 표시 -->
+    <meta name="Author" content="팀 감자탕" />
+    <!-- 검색엔진에서 검색할 홈페이지의 키워드 표시 -->
+    <meta name="Keywords" content="애플제품, 애플고객지원서비스" />
+    <!-- 웹사이트의 주제를 표시 -->
+    <meta name="Description" content=""도움이 필요하신 경우 언제든지 Apple 지원에 문의하십시오." />
+    <link rel="stylesheet" href="./apple-clone.css">
 </head>
 <body>
     <!-- 해더 -->
@@ -12,12 +27,15 @@
         <nav class="header-nav">
             <ul class="header-nav-container">
                 <li class="header-nav-logo">
-                    <a href="#">apple logo</a>
+                    <!-- <a href="#" class="a11y-hidden">apple logo<i class="fab fa-apple"></i></a> -->
+                    <a class="header-nav-clickable-space" href="#" role="button" aria-label="Go to main homepage"><img class="header-nav-logo-image" src="./icons/apple-logo.png" /></a>
                 </li>
                 <li class="header-nav-menu">
-                    <a href="#">hamburger bar</a>
-                    <ul class="header-nav-menu-list">
-                        <input id="header-nav-search-engine" type="text" placeholder="지원 검색하기" />
+                    <a class="header-nav-clickable-space" href="#" role="button" aria-label="Open hidden header nav menu"><img class="header-nav-menu-image" src="./icons/hamburger-menu-bar-customized.png" /></a>
+                    <!-- hidden sliding side bar -> show when hamburger icon is onclicked -->
+                    <!-- <ul class="header-nav-menu-list">
+                        <input id="header-nav-search-engine" type="text" placeholder="지원 검색하기" /> -->
+                        
                         <!-- 질문 1: 여기 label이나 버튼태그 필요없을까요?? 
                             아래 메인 파트에서는 검색창을 폼태그 안에 감싼뒤 인풋과 버튼을 세트로 줬는데...!!
                         이번꺼는 안그래도 될까용??  
@@ -30,17 +48,18 @@
                             두번째 해결안: 버튼을 이미지로 변경(replacing button with image)할 수 있다 ...
                         cf. https://stackoverflow.com/questions/11380776/replacing-button-with-image  -->
                         <!-- <label for="header-nav-search-engine" class="a11y-hidden"><img src="./icons/search-icon.png" alt="검색 엔진 영역">지원 검색하기</label> -->
-                        <label for="header-nav-search-engine" class="a11y-hidden"><i class="fas fa-search"></i>지원 검색하기</label>
-                        <li><a href="#">Mac</a></li>
+                        <!-- <label for="header-nav-search-engine" class="a11y-hidden"><i class="fas fa-search"></i>지원 검색하기</label>
+                        
+                            <li><a href="#">Mac</a></li>
                         <li><a href="#">iPad</a></li>
                         <li><a href="#">iPhone</a></li>
                         <li><a href="#">Watch</a></li>
                         <li><a href="#">Music</a></li>
-                        <li><a href="#">고객지원</a></li>
-                    </ul>
+                        <li><a href="#">고객지원</a></li> 
+                    </ul >-->
                 </li>
                 <li class="nav-menu-cart">
-                    <a href="#">카트</a>
+                    <a class="header-nav-clickable-space" href="#" role="button" aria-label="Show items in shopping cart"><img class="nav-menu-cart-image shadow-effect" src="./icons/shopping-bag-customized.png" /></a>
                 </li>
             </ul>
         </nav>
@@ -49,35 +68,42 @@
     <main class='main'>
         <section class="main-service-container">
             <div class="main-service-banner">
+                <!-- 아래와 같이? 아니면 picture로 Img를 각 뷰포트 크기에 맞게 정하고 묶어버릴까..?  -->
+                <!-- 아니면: img>map>area ??? 
+                cf. https://rgy0409.tistory.com/2881 -->
+                <div class="main-service-banner-bgr-img-div"></div>
                 <h2>Apple 지원에 오신 것을 환영합니다.</h2>
                 <form action="#">
                     <fieldset>
-                        <input type="text"/><button></button>
+                        <legend class="a11y-hidden" aria-hidden="true">지원 검색하기</legend>
+                        <input class="main-search-engine" value="지원 검색하기" type="search"/>
+                        <!-- <div class="main-search-engine-image"></div> -->
+                        <div><img src="./icons/search-icon-customized.png" class="main-search-engine-image"></div>
                     </fieldset>
                 </form>
-                <div class="main-service-banner-image"></div>
+                <!-- <div class="main-service-banner-image"></div> -->
             </div>
             <div class="main-service">
                 <ul class="main-service-products">
                     <!-- 질문3: 여기서 ul 태그가 porducts면 아래 li 태그는 product로 끝내는게 좋을까유? 
                         해결안: li 태그에 있는 class 값은 지우자요! -->
                     <li>
-                        <a href="#"><span>iPhone</span></a>
+                        <a href="#"><span>iPhone</span><img class="iPhone-image" src="./icons/iPhone-customized.png" alt="iPhone 지원 목록"></a>
                     </li>
                     <li>
-                        <a href="#"><span>Mac</span></a>
+                        <a href="#"><span>Mac</span><img class="Mac-image" src="./icons/Mac-customized.png" alt="Mac 지원 목록"></a>
                     </li>
                     <li>
-                        <a href="#"><span>iPad</span></a>
+                        <a href="#"><span>iPad</span><img class="iPad-image" src="./icons/iPad-customized.png" alt="iPad 지원 목록"></a>
                     </li>
                     <li>
-                        <a href="#"><span>Watch</span></a>
+                        <a href="#"><span>Watch</span><img class="apple-watch-image" src="./icons/apple-watch-customized.png" alt="Apple Watch 지원 목록"></a>
                     </li>
                     <li>
-                        <a href="#"><span>Accessory</span></a>
+                        <a href="#"><span>Accessory</span><img class="apple-accessory-image" src="./icons/apple-accessory-customized.png" alt="Apple Accessories"></a>
                     </li>
                     <li>
-                        <a href="#"><span>Music</span></a>
+                        <a href="#"><span>Music</span><img class="apple-music-image" src="./icons/apple-music-customized.png" alt="Apple Music"></a>
                     </li>
                 </ul>
             </div>
@@ -106,6 +132,9 @@
                 <p>제품을 선택하고 가장 적합한 해결 방법을 확인할 수 있습니다.</p>
                 <a href="#">지금 시작하기<span>></span></a>
                 <a href="#">Apple 지원 앱 다운로드하기<span>></span></a>
+                <!-- 반응형 이미지: 
+                    https://heropy.blog/2019/06/16/html-img-srcset-and-sizes/ 
+                https://developer.mozilla.org/ko/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images-->
                 <div class="main-support-banner-image"></div>
             </div>
             <div class="main-support-container-applecare">
@@ -132,6 +161,7 @@
             </div>
         </section>
     </main>
+    <!-- 아이디어!!! float: right; 또는 position: fixed; 해서 둥둥 띄울 버튼에 <hgroup>사용해서 heading map이랑 탑으로 올리는 버튼 구현??  -->
     <!-- 푸터 -->
     <footer class='footer'>
         <div class="footer-header">
@@ -186,7 +216,11 @@
         <div class="footer-legal">
             <div class='footer-country'><a href="">대한민국</a></div>
             <div class="footer-address">
-                <address>Copyright &copy; 2021 Apple Inc. 모드 권리 보유.</address>
+                <!-- <address>Copyright &copy; 2021 Apple Inc. 모드 권리 보유.</address> 
+                https://developer.mozilla.org/ko/docs/Web/HTML/Element/address -->
+                <!-- 덧붙이는 글이나, 저작권과 법픂 표기 등의 작은 텍스트를 나타내는 요소:  
+                https://developer.mozilla.org/ko/docs/Web/HTML/Element/small -->
+                <small>Copyright &copy; 2021 Apple Inc. 모드 권리 보유.</small>
                 <ul>
                     <li><a href="#">개인정보 처리방침</a></li>
                     <li><a href="#">사용약관</a></li>
