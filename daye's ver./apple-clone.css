@@ -1,0 +1,626 @@
+/* Initializing (with normalize.css) */
+/* necolas Normalize.css v8.0.1 - 압축본 */
+/* cf. https://blog.tommyzip.co.kr/code/css-initialization-guide/#normalize-initialization-guide */
+/* html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:0.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-0.25em}sup{top:-0.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,[type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:0.35em 0.75em 0.625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type="checkbox"],[type="radio"]{box-sizing:border-box;padding:0}[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto}[type="search"]{-webkit-appearance:textfield;outline-offset:-2px}[type="search"]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none} */
+ul, li{
+	list-style-type: none;
+}
+
+/* common css */
+.a11y-hidden { 
+	overflow: hidden; 
+	position: absolute; 
+	clip: rect(0 0 0 0); 
+	/* IE 6,7 */ 
+	/* clip: rect(0,0,0,0);  */
+	/* cf. https://lovediv.tistory.com/2  */
+	width: 1px; 
+	height: 1px; 
+	margin: -1px; 
+	border: 0; padding: 0; 
+	}
+
+/* .no-style-to-a{
+	color: black;
+	text-decoration: none;
+	font-size: 100;
+} */
+
+
+/* 해더 */
+.header{
+	/* height: 45px; */
+	background-color: rgba(0, 0, 0, 0.850);
+}
+/* .header-nav{} */
+.header-nav-container{
+	display: flex;
+	justify-content: space-between;
+}
+.header-nav-container > li{
+	/* wrapper 역할인 li 태그는 45px * 45px 로 고정시켜주고... */
+	width: 45px;
+	height: 45px;
+	/* 해더에서 각 이미지를 담고 있는 img 태그와 이들을 감싸고 있는 a 태그들의 위치를 각각의 a 태그의 
+	부모 요소인 각각의 li태그로 하기 위해 아래와 같이 relative를 주고, 그 밑에 clickable area는 absolute처리를 했다.  */
+	position: relative;	
+}
+.header-nav-clickable-space{
+	/* background-color: rgb(207, 38, 38); */
+	/* 각 이미지의 크기가 다르기 때문에 을 입혀, 
+	clickable한 영역을 균등하게 만들어주는 작업을 한다 */
+	position: absolute;
+	width: 45px;
+	height: 45px;
+}
+
+/* Header - 각 로고들이 크기가 다르기 때문에 각자 width, height, padding을 다르게 적용시킨다. */
+.header-nav-apple-logo-image{
+	width: 18px;
+	height: 20px;
+	padding: 12px 14px 13px 13px;
+}
+.header-nav-menu-image{
+	width: 30px;
+	height: 30px;
+	padding: 7px 8px 8px 7px;
+}
+.header-nav-shopping-bag-image{
+	width: 18px;
+	height: 20px;
+	padding: 12px 13px 13px 14px;
+}
+/* Header의 로고 중 메뉴 바가 첫번째로 디자인 적으로는 오게끔 배치 */
+.header-nav-container > li:nth-child(2){
+	order: -1;
+}
+
+/* header의 이미지를 hover 했을 때 효과 */
+/* .shadow-effect:hover {    --> 이거는 좀 더 알아보기! 
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0.5;
+	transition: .5s ease;
+	filter: drop-shadow(2px rgba(0,0,0,0.23)) invert(75%);
+} */
+
+
+
+
+
+/* 메인 - 1st section */
+.main{
+}
+.main-service-container{
+	/* background-color: rgb(201, 222, 184); */
+	position: relative;
+
+}
+.main-service-banner-bgr-img-div{
+	background-image: url(./images/image-for-main-service-banner.jpeg);
+	/* Used if the image is unavailable */
+	background-color: #ccc;   
+	background-repeat: no-repeat;
+	/* Resize the background image to cover the entire container */
+	/* background-size: 150% 150%; */
+	background-size: cover;
+	background-position: center bottom;
+	width: 100%;
+	height: 230px;
+}
+/* h2랑 지원 검색하기 form 태그 부분 */
+h2 {
+	margin: 40px 47px 21px 46px;
+	text-align: center;
+	font-family:  "SF Pro KR","SF Pro Display","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 1.7rem;
+	font-weight: 500;
+	position: relative;
+}
+fieldset{
+	border: none;
+	padding: 0;
+	position: relative;
+}
+.search-engine-legend{
+	/* 위치 관련 속성 */
+	position: absolute;
+	top: 14px;
+	left: 68px;
+	z-index: 1;
+	color: rgb(154, 154, 154);
+	font-weight: 400;
+}
+.main-search-engine{
+	position: absolute;
+	/* 지원 검색하기 검색 엔진 크기 설정 */
+	width: 90%;
+	height: 40px;
+	/* border 관련 css 속성들 */
+	border:1px solid rgb(154, 154, 154);
+	border-radius: 3px;
+
+	margin: 0 26px 35px 26px;
+	padding-left: 40px;
+	cursor: text;
+}
+.main-search-engine:focus{
+	outline: none;
+}
+.main-search-engine-image{
+	/* 위치 관련 속성 */
+	position: absolute;
+	top: 0;
+	left: 27px;
+	z-index: 1;
+	/* 사이즈 */
+	width: 23px;
+	height: 28px;
+	padding: 7px 9px 5px 10px;
+}
+
+
+.main-service-container{
+	/* margin: 0;
+	padding: 0; */
+}
+.main-service{
+	margin-top: 90px;
+}
+.main-service-products{
+	width: 100%;
+	/* margin-left: 15px; */
+}
+.main-service-products li{
+	display: inline-block;
+	margin: 0;
+	width: 233px;
+	height: 160px;
+	position: relative;
+}
+/* .main-service-products a{
+	text-decoration: none;
+	color: black;
+	position: absolute;
+	width: 89px;
+	height: 117px;
+} */
+.main-service-products span{
+	position: absolute;
+	top: 90px;
+	padding: 15px 0;
+	/* left: 100px; */
+}
+.main-service-products li:nth-child(1) span{
+	left: 107px;
+	padding: 10px 0;
+}
+.main-service-products li:nth-child(2) span{
+	left: 98px;
+	/* padding: 10px 0; */
+}.main-service-products li:nth-child(3) span{
+	left: 116px;
+	/* padding: 10px 0; */
+}.main-service-products li:nth-child(4) span{
+	left: 88px;
+	/* padding: 0; */
+}.main-service-products li:nth-child(5) span{
+	left: 107px;
+	padding: 21px 0;
+}.main-service-products li:nth-child(6) span{
+	left: 93px;
+}
+/* iPhone, Mac, iPad, Watch, AirPods, Music */
+/* .main-service-products의 자식요소들인 li들과 그 속에 있는 
+각각의 이미지 태그들을 :nth-child()로 css 를 적용 시키기?? */
+.iPhone-image{
+	width: 48px;
+	height: 80px;
+	padding: 2px 20px 35px 21px;
+	margin: 14px 66px 29px 87px;
+}
+.Mac-image{
+	width: 61px;
+	height: 62px;	
+	padding: 13px 14px 42px 14px;
+	margin: 14px 85px 29px 68px;
+}
+.iPad-image{
+	width: 55px;
+	height: 75px;	
+	padding: 8px 17px 34px 17px;
+	margin: 14px 66px 27px 87px;
+}
+.apple-watch-image{
+	width: 40px;
+	height: 40px;	
+	padding: 24px 23px 53px 26px;
+	margin: 14px 88px 28px 66px;
+}
+.apple-airpods-image{
+	width: 50px;
+	height: 70px;	
+	padding: 24px 18px 47px 23px;
+	margin: 10px 66px 13px 87px;
+}
+.apple-music-image{
+	width: 52px;
+	height: 51px;
+	padding: 32px 17px 34px 20px;
+	margin: 4px 86px 38px 67px;	
+}
+/* iPhone, Mac, iPad, Watch, AirPods, Music의 clickable area */
+.main-service-products li a{
+	/* position: absolute; */
+	float: left;
+	width: 89px;
+	height: 117px;
+	/* left: 87px; */
+}
+.main-service-products li:nth-child(1) a{
+
+}
+.main-service-products li:nth-child(2) a{}
+.main-service-products li:nth-child(3) a{}
+.main-service-products li:nth-child(4) a{}
+.main-service-products li:nth-child(5) a{}
+.main-service-products li:nth-child(6) a{}
+
+
+/* main-sub-service */
+.sub-service{
+	/* 총 높이는 478 인데 밑에 186+140+150 = 476px.
+	나머지 2px은 hr 로 채울 것이 아니라...
+	가상 요소 만들어서 각 각 1px씩 차지하게해서... 채울 것... */
+	height: 478px;
+	border-top: 1px solid #ccc;
+}
+.sub-service-products{
+	margin-top: 30px;
+}
+.sub-service-products li:nth-child(1){
+	height: 186px;
+}
+.sub-service-products li:nth-child(2){
+	height: 140px;
+}
+.sub-service-products li:nth-child(3){
+	height: 150px;
+}
+.sub-service-products li::after{
+	content: "";
+	display: block;
+	border-bottom: 1px solid #ccc;
+	width: 80%;
+	margin: 0 auto;
+}
+.sub-service-products li:nth-child(3):after{
+	border: none;
+}
+.sub-service-forgot-id-or-pw-image{
+	width: 43px;
+	height: 30px;
+	position: absolute;
+	top: 20px;
+	left: 120px;
+}
+.sub-service-apple-repairment-image{
+	width: 40px;
+	height: 43px;
+	position: absolute;
+	top: 20px;
+	left: 120px;
+}
+.sub-service-billing-and-subscription-image{
+	width: 30px;
+	height: 42px;
+	position: absolute;
+	top: 20px;
+	left: 120px;
+}
+.sub-service-products a{
+	/* 아래의 두 줄 코드는 .sub-service-products span{} 에다가 적어놈!  */
+	/* color: rgb(28, 122, 190);
+	text-decoration: none; */
+	/* div의 크기만큼 a 태그는 clicakble 한 영역이 된다...
+	해결 방법은 ??????  
+	cf. https://css-tricks.com/forums/topic/adjust-clickable-area-size/ */
+	/* width: 280px;
+	height: 115px; */
+}
+.sub-service-products div{
+	width: 280px;
+	height: 115px;
+	margin: auto;
+	margin-bottom: ;
+	position: relative;
+}
+.sub-service-products li:nth-child(1) div{
+	margin-bottom: 25px;
+}
+.sub-service-products li:nth-child(2) div{
+	margin-bottom: 35px;
+}
+.sub-service-products li:nth-child(3) div{
+	margin-top: 30px;
+}
+
+.sub-service-products li:nth-child(1){
+	/* margin-top: 70px; */
+}
+.sub-service-products span{
+	color: rgb(28, 122, 190);
+	text-decoration: none;
+	font-size: 0.88rem;
+}
+.sub-service-products span:hover{
+	text-decoration: underline;
+}
+.greater-than-sign-icon{
+	/* background-color: aqua; */
+	/* fill 속성이 안먹혀서 먹히는 filter를 사용함! */
+	/* fill: #1c6dbe; */
+	/* fill: white; */
+	filter: invert(44%) sepia(88%) saturate(5669%) hue-rotate(198deg) brightness(85%) contrast(78%);
+	/* filter color generator -> https://codepen.io/sosuke/pen/Pjoqqp */
+	padding-left: 5px;	
+}
+.sub-service-product-wrapper{
+	position: absolute;
+	top: 80px;
+	left: 45px;
+}
+/* ??????? */
+/* .sub-service-product-wrapper:nth-child(2){
+	position: absolute;
+	top: 80px;
+	left: 95px;
+} */
+.sub-service-products li:nth-child(2) .sub-service-product-wrapper,
+.sub-service-products li:nth-child(3) .sub-service-product-wrapper{
+	left: 94px;
+}
+
+
+/* 메인 - 2nd section */
+.main-support-container{
+	/* background-color: pink; */
+	margin: 50px 0 0 0;
+}
+.main-support-container-banner-content{
+	/* background-color: aquamarine; */
+	padding: 30px 0 20px 30px;
+	border-bottom: 1px solid #ccc;
+}
+.main-support-container-banner h2{
+	margin: 0 0 10px 0;
+	text-align: start;
+	font-family:  "SF Pro KR","SF Pro Display","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 1.4rem;
+	font-weight: 600;
+}
+.main-support-container-banner p{
+	/* text-align: start; */
+	font-family:  "SF Pro KR","SF Pro Display","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 0.9rem;
+	font-weight: normal;
+	display: block;
+	padding: 10px 0;
+}
+.main-support-container-banner a{
+	display: block;
+	color: rgb(33, 126, 193);
+	text-decoration: none;
+	padding: 10px 0;
+	font-size: 0.9rem;
+	font-weight: 400;
+}
+.main-support-container-banner a:hover{
+	text-decoration: underline;
+}
+/* .main-support-container-banner a:nth-child(1){} */
+.main-support-banner-image{
+	background-image: url(./images/image-for-sub-service-div.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	width: 100%;
+	height: 320px;
+}
+.main-support-container-applecare-content{
+	padding-left: 30px;
+	padding-bottom: 50px;
+	padding-right: 30px;
+	border-bottom: 1px solid #ccc;
+}
+.main-support-container-applecare-content a,
+.main-support-container-question a{
+	display: inline-block;
+	color: rgb(33, 126, 193);
+	text-decoration: none;
+	padding: 10px 0;
+	font-size: 0.98rem;
+	font-weight: 400;
+}
+.main-support-container-applecare-content a:hover,
+.main-support-container-question a:hover{
+	text-decoration: underline;
+}
+
+.main-support-container-applecare-content h3, .main-support-container-question h3{
+		margin: 28px 0 10px 0;
+		text-align: start;
+		font-family:  "SF Pro KR","SF Pro Display","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif;
+		font-size: 1.3rem;
+		font-weight: 500;
+}
+.main-support-container-applecare-content p, .main-support-container-question p{
+	font-family:  "SF Pro KR","SF Pro Display","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 0.9rem;
+	font-weight: normal;
+	display: block;
+	padding: 10px 0;
+	line-height: 2;
+}
+.main-support-image-wrapper{
+	width: 190px;
+	height: 190px;
+	margin: 70px auto;
+	margin-bottom: 10px;
+}
+.main-support-image-wrapper img{
+	width: 190px;
+	height: 190px;
+}
+
+.main-support-container-question{
+	padding-left: 30px;
+	padding-bottom: 50px;
+	padding-right: 30px;
+	border-bottom: 1px solid #ccc;
+}
+.main-support-container-program{
+	padding-left: 30px;
+	padding-bottom: 50px;
+	/* border-bottom: 1px solid #ccc; */
+}
+.main-support-container-program h3{
+	margin: 55px 0 25px 0;
+	text-align: start;
+	font-family:  "SF Pro KR","SF Pro Display","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 1.12rem;
+	font-weight: 400;
+}
+.main-support-container-program ul{
+	display: block;
+}
+.main-support-container-program a{
+	display: block;
+	margin-bottom: 25px;
+	font-family:  "SF Pro KR","SF Pro Display","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 0.9rem;
+	font-weight: normal;
+	/* font-weight: 400; */
+	text-decoration: none;
+	color: rgb(33, 126, 193);
+}
+.main-support-container-program li a{
+	display: inline-block;
+}
+.main-support-container-program a:hover{
+	text-decoration: underline;
+}
+.main-support-container-program li:nth-child(6) img{
+	cursor: pointer;
+}
+
+/* 푸터 */
+.footer{
+	background-color: rgba(234, 234, 234, 0.882);
+	width: auto;
+	height: 300px;
+	/* position: relative; */
+	/* font 관련 css - 아래 3줄... */
+	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+	font-size: 10px; 
+	color: rgb(113, 111, 111);	
+	padding: 0px 15px;
+}
+.footer a{
+	text-decoration: none;
+	color: rgb(113, 111, 111);	
+}
+.footer-header{
+	display: flex;
+	/* position: relative; */
+	/* background-color: aqua; */
+	border-bottom: 1px solid rgb(151, 151, 151);
+	height: 40px;
+	padding-bottom: 10px;
+}
+.footer-header a{
+	/* padding-top: 10px; */
+	width: 30px;
+	height: 50px;
+}
+.footer-header-apple-logo{
+	width:20px;
+	height: 20px;
+	padding: 16px 5px;
+	display: inline-block;
+}	
+.footer-header-arrow{
+	width: 17px;
+	height: 24px;
+	padding: 14px 5px 0 5px;
+}
+.footer-header-text{
+	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+	color: rgb(113, 111, 111);
+	padding-top: 23px;	
+	font-size: 1.1em;
+}
+.footer-menu-list li{
+	width: 100%;
+	height: 37px;
+	position: relative;
+	border-bottom: 1px solid #ccc;
+}
+.footer-menu-list h4{
+	padding-top: 15px;
+	padding-left: 4px;
+	font-size: 1.1em;
+	font-weight: bolder;
+}
+.footer-menu-list span{
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	font-size: 1.6em;
+} 
+.footer-menu-list span:hover{
+	color: rgb(62, 61, 61);
+	font-size: 1.7em;
+	transition: .3s;
+}
+.footer-legal{
+	padding-top: 15px;
+	padding-left: 5px;
+}
+.footer-country{
+	margin-top: 18px;
+	margin-bottom: 20px;
+	font-size: smaller;
+}
+.footer-country:hover{
+	text-decoration: underline;
+}
+.footer-address small{
+	color: rgb(168, 168, 168);
+	font-weight: 400;
+}
+.footer-address-footer{
+	display: flex;
+	margin-top: 5px;
+	/* background-color: aqua; */
+}
+.footer-address-footer > li {
+	padding: 2px 8px;	
+	vertical-align: bottom;
+}
+.footer-address-footer > li:nth-child(1){
+	padding-left: 0;
+}
+.footer-address-footer > li:hover {
+	text-decoration: underline;
+}
+.footer-address-footer > span {
+	/* background-color: red; */
+	margin-top: 1px;
+}
+
+
