@@ -1,0 +1,437 @@
+@import 'reset.css';
+
+.a11y-hidden { 
+	overflow: hidden; 
+	position: absolute; 
+	clip: rect(0 0 0 0); 
+	/* IE 6,7 */ 
+	/* clip: rect(0,0,0,0);  */
+	/* cf. https://lovediv.tistory.com/2  */
+	width: 1px; 
+	height: 1px; 
+	margin: -1px; 
+	border: 0; padding: 0; 
+}
+
+
+body{
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #333;
+	font-family:  "SF Pro KR","SF Pro Display","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif;
+
+}
+
+body *, body *::before, body *::after{
+    box-sizing: border-box;
+}
+.header {
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.850);
+    position: relative;
+}
+
+.header-nav {
+    position: absolute;
+    height: 48px;
+    background-color: rgba(0, 0, 0, 0.850);
+    width: 100%;
+}
+
+.header-nav-container li{
+    text-align: center;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    vertical-align: middle;
+}
+
+.header-nav-container img{
+    width: 20px;
+    height: 48px;
+}
+
+.header-nav-apple-logo {
+    left: calc(50% - 24px);
+}
+
+.header-nav-shopping-bag-image {
+    width: 18px;
+}
+
+.header-nav-menu {
+    left: 0;
+}
+
+.header-nav-menu img{
+    width: 25px;
+    height: 40px;
+}
+
+.header-nav-shopping {
+    right: 0;
+}
+
+.main-service-banner-bgr-img-div{
+	background-image: url(/images/image-for-main-service-banner.jpeg);
+	/* Used if the image is unavailable */
+	background-color: #ccc;   
+	background-repeat: no-repeat;
+	/* Resize the background image to cover the entire container */
+	/* background-size: 150% 150%; */
+	background-size: cover;
+	background-position: center bottom;
+	width: 100%;
+	height: 326px;
+}
+
+.main-service-banner-search {
+    position: relative;
+    margin: 0 5%;
+    margin-top: 32px;
+}
+
+.main-service-banner h2{
+    font-size: 1.7rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.main-search-engine{
+    margin-top: 22px;
+    width: 100%;
+    height: 40px;
+    border:1px solid rgb(154, 154, 154);
+    border-radius: 3px;
+    cursor: text;
+    padding: 0 35px 0 40px;
+}
+
+.main-search-engine:focus{
+	outline: none;
+}
+
+.main-search-engine-image {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+.main-service {
+    margin: 0 10%;
+    margin-top: 52px;
+    text-align: center;
+}
+
+.main-service-products{
+    width: 100%;
+
+}
+
+.main-service-products li{
+    display: inline-block;
+    min-width: 144px;
+    height: 110px;
+    margin-bottom: 48px;
+}
+
+.main-service-products-image {
+    margin: 0 auto;
+    width: 68px;
+    height: 72px;
+}
+
+.main-service-products-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.sub-service-product-image {
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+}
+
+.sub-service-product-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.sub-service {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #ccc;
+
+}
+
+.sub-service-products {
+    margin: 0 10%;
+    margin-top: 48px;
+}
+
+.sub-service-products li {
+    padding: 30px;
+    border-bottom: 1px solid #ccc;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.sub-service-product-wrapper {
+    display: inline-block;
+    margin-top: 16px;
+    color: #0070c9;
+}
+
+
+
+
+.main-support-banner-image{
+	background-image: url(/images/image-for-sub-service-div.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	width: 100%;
+	height: 320px;
+}
+
+.main-support-container-banner-content {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 32px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 32px;
+
+}
+
+.main-support-container-banner-content h2 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.main-support-container-banner-content p {
+    margin-top: 12px;
+}
+
+.main-support-container-banner-content a{
+    display: block;
+    margin-top: 8px;
+    font-size: 17px;
+    font-weight: 400;
+    color: #0070c9;
+}
+
+.main-support-container-applecare {
+    padding-top: 42px;
+    margin: 74px 5% 5% 48px;
+}
+
+.main-support-container-applecare-content h3{
+    font-size: 24px;
+    font-weight: 500;
+    margin: 8px 0;
+}
+
+.main-support-container-applecare-content p{
+    margin: 16px 0 12px 0;
+    font-size: 17px;
+}
+
+.main-support-container-applecare-content a{
+    margin-top: 12px;
+    color: #0070c9;
+}
+
+.main-support-image-wrapper {
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 17px;
+}
+
+.main-support-image-wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main-support-container-question{
+    padding: 50px 30px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.main-support-container-question h3 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.main-support-container-question p{
+    margin: 12px 0;
+}
+
+.main-support-container-question a{
+    color: #0070c9;
+    font-size: 17px;
+}
+
+.main-support-container-program{
+	padding-left: 30px;
+	padding-bottom: 50px;
+	/* border-bottom: 1px solid #ccc; */
+}
+.main-support-container-program h3{
+	margin: 55px 0 25px 0;
+	text-align: start;
+	font-family:  "SF Pro KR","SF Pro Display","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 1.12rem;
+	font-weight: 400;
+}
+.main-support-container-program ul{
+	display: block;
+}
+.main-support-container-program a{
+	display: block;
+	margin-bottom: 25px;
+	font-family:  "SF Pro KR","SF Pro Display","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 0.9rem;
+	font-weight: normal;
+	/* font-weight: 400; */
+	text-decoration: none;
+	color: rgb(33, 126, 193);
+}
+.main-support-container-program li a{
+	display: inline-block;
+}
+.main-support-container-program a:hover{
+	text-decoration: underline;
+}
+.main-support-container-program li:nth-child(6) img{
+	cursor: pointer;
+}
+
+
+.footer{
+	background-color: rgba(234, 234, 234, 0.882);
+	width: auto;
+	height: 300px;
+	/* position: relative; */
+	/* font 관련 css - 아래 3줄... */
+	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+	font-size: 10px; 
+	color: rgb(113, 111, 111);	
+	padding: 0px 15px;
+}
+.footer a{
+	text-decoration: none;
+	color: rgb(113, 111, 111);	
+}
+.footer-header{
+	display: flex;
+	/* position: relative; */
+	/* background-color: aqua; */
+	border-bottom: 1px solid rgb(151, 151, 151);
+	height: 40px;
+	padding-bottom: 10px;
+}
+.footer-header a{
+	/* padding-top: 10px; */
+	width: 30px;
+	height: 50px;
+}
+.footer-header-apple-logo{
+	width:20px;
+	height: 20px;
+	padding: 16px 5px;
+	display: inline-block;
+}	
+.footer-header-arrow{
+	width: 17px;
+	height: 24px;
+	padding: 14px 5px 0 5px;
+}
+.footer-header-text{
+	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+	color: rgb(113, 111, 111);
+	padding-top: 23px;	
+	font-size: 1.1em;
+}
+.footer-menu-list li{
+	width: 100%;
+	height: 37px;
+	position: relative;
+	border-bottom: 1px solid #ccc;
+}
+.footer-menu-list h4{
+	padding-top: 15px;
+	padding-left: 4px;
+	font-size: 1.1em;
+	font-weight: bolder;
+}
+.footer-menu-list span{
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	font-size: 1.6em;
+} 
+.footer-menu-list span:hover{
+	color: rgb(62, 61, 61);
+	font-size: 1.7em;
+	transition: .3s;
+}
+.footer-legal{
+	padding-top: 15px;
+	padding-left: 5px;
+}
+.footer-country{
+	margin-top: 18px;
+	margin-bottom: 20px;
+	font-size: smaller;
+}
+.footer-country:hover{
+	text-decoration: underline;
+}
+.footer-address small{
+	color: rgb(168, 168, 168);
+	font-weight: 400;
+}
+.footer-address-footer{
+	display: flex;
+	margin-top: 5px;
+	/* background-color: aqua; */
+}
+.footer-address-footer > li {
+	padding: 2px 8px;	
+	vertical-align: bottom;
+}
+.footer-address-footer > li:nth-child(1){
+	padding-left: 0;
+}
+.footer-address-footer > li:hover {
+	text-decoration: underline;
+}
+.footer-address-footer > span {
+	/* background-color: red; */
+	margin-top: 1px;
+}
+
+@media all and (max-width: 700px) {
+    .main-service-products li {
+        width: 49%;
+    }
+}
+@media all and (min-width: 700px) and (max-width: 1080px) {
+    .main-service-products li {
+        width: 32%;
+    }
+}
+
+@media all and (min-width: 1081px) {
+    .main-service-products li {
+        width: 16%;
+    }
+}
