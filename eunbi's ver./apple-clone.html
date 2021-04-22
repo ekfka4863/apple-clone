@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!-- 아래의 lang 은 접근성 측면에서 권장사항! -->
+<html lang="ko-KR">
+<head>
+    <!-- title -> 페이지의 목적을 설명하는 타이틀을 제공. 스크린리더 사용자가 탐색시 유용한 정보를 빠르게 얻어갈 수 있도록 ... 해당 웹사이트가 어떤 웹사이트일지 title만 보고 유추할 수 있도록 ... -->
+    <!-- <title>애플 공식 홈페이지 - 고객지원 페이지</title> -->
+    <title><i class="fab fa-apple"></i>공식 Apple 지원</title>
+    <!-- 웹 페이지의 메타 데이터를 명시하는 meta 태그의 사용! 
+    cf. https://blog-pleur.tistory.com/21 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- HTML5 이후로 사용되고 있으며 인터넷 익스플로러에서 화면이 깨지는 걸 사전에 방지하기 위해 사용한다 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 웹사이트를 제작할 때 어떤 툴을 사용했는지 표시 -->
+    <meta name="Generator" content="VSCode" />
+    <!-- 웹사이트의 제작자를 표시 -->
+    <meta name="Author" content="팀 감자탕" />
+    <!-- 검색엔진에서 검색할 홈페이지의 키워드 표시 -->
+    <meta name="Keywords" content="애플제품, 애플고객지원서비스" />
+    <!-- 웹사이트의 주제를 표시 -->
+    <meta name="Description" content = "도움이 필요하신 경우 언제든지 Apple 지원에 문의하십시오." />
+    <!-- fontawesone -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <link rel="stylesheet" href="./apple-clone.css">
+    <script src="./apple-clone-main-sidebar.js" defer></script>
+</head>
+<body>
+    <!-- 해더 -->
+    <header class='header'>
+        <h1 class="a11y-hidden">헤더</h1>
+        <nav class="header-nav">
+            <ul class="header-nav-container">
+                <li class="header-nav-apple-logo">
+                    <!-- <a href="#" class="a11y-hidden">apple logo<i class="fab fa-apple"></i></a> -->
+                    <a class="header-nav-clickable-space" href="https://www.apple.com/kr/" role="button" aria-label="Go to main homepage"><img class="header-nav-apple-logo-image" src="./icons/apple-logo.svg" alt="Go to main homepage"/></a>
+                </li>
+                <li class="header-nav-menu">
+                    <a class="header-nav-clickable-space" href="#" role="button" aria-label="Open hidden header nav menu"><img class="header-nav-menu-image" src="./icons/hamburger-menu-bar-customized.png" alt="header nav menu image"/></a>
+                </li>
+                <li class="header-nav-shopping">
+                    <a class="header-nav-clickable-space" href="#" role="button" aria-label="Show items in shopping cart"><img class="header-nav-shopping-bag-image shadow-effect" src="./icons/shopping-bag-customized.svg" alt="Show items in shopping cart"/></a>
+                </li>
+            </ul>
+            
+            
+            <!-- apple-clone-main-sidebar.js 와 관련된 부분! -->
+            <!-- hidden sliding side bar -> show when hamburger icon is onclicked -->
+            <div class="header-nav-menu-list-outer-wrapper">
+                <div class="header-nav-menu-list-inner-wrapper">
+                    <input id="header-nav-search-engine" type="text" placeholder="지원 검색하기" />
+                    <label for="header-nav-search-engine">
+                        <img src="./icons/search-icon.png" alt="검색 엔진 영역">
+                    </label>
+                </div>
+                <ul class="header-nav-menu-list">
+                        <li><a href="#">Mac</a></li>
+                        <li><a href="#">iPad</a></li>
+                        <li><a href="#">iPhone</a></li>
+                        <li><a href="#">Watch</a></li>
+                        <li><a href="#">Music</a></li>
+                        <li><a href="#">고객지원</a></li> 
+                </ul>
+            </div>
+
+            
+            <!-- apple-clone-main-sidebar.js 와 관련된 부분! -->
+            <!-- hidden sliding side shopping list -> show when shopping bag icon is onclicked -->
+            <div class="header-nav-shopping-list-outer-wrapper">
+                <div class="header-nav-shopping-list-inner-wrapper">
+                    <div class="shopping-list">
+                        장바구니가 비어 있습니다.
+                    </div>
+                    <ul class="shopping-list-menu">
+                        <li><a href="#"><i class="fas fa-shopping-bag"></i>장바구니</a></li>
+                        <li><a href="#"><i class="far fa-heart"></i>즐겨찾기</a></li>
+                        <li><a href="#"><i class="fas fa-box"></i>주문</a></li>
+                        <li><a href="#"><i class="fas fa-cog"></i>계정</a></li>
+                        <li><a href="#"><i class="fas fa-user-circle"></i>로그인</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            
+        </nav>
+    </header>
+    <!-- 메인 -->
+    <main class='main'>
+        <section class="main-service-container">
+            <div class="main-service-banner">
+                <!-- 아래와 같이? 아니면 picture로 Img를 각 뷰포트 크기에 맞게 정하고 묶어버릴까..?  -->
+                <!-- 아니면: img>map>area ??? 
+                cf. https://rgy0409.tistory.com/2881 -->
+                <div class="main-service-banner-bgr-img-div"></div>
+                <div class="main-service-banner-search">
+                    <h2>Apple 지원에 오신 것을 환영합니다</h2>
+                    <form action="#">
+                        <fieldset>
+                            <legend class="search-engine-legend a11y-hidden">지원 검색하기</legend>
+                            <input list="quick-link" class="main-search-engine" type="search" placeholder="지원 검색하기"/>
+                            <!-- input tag가 포커스를 받을 때... -->
+                            <datalist id="quick-link">
+                                <h3>빠른 링크</h3>
+                                <!-- <div> -->
+                                <option>Apple ID 암호를 잊어버린 경우</option>
+                                <!-- <option value="Apple ID 암호를 잊어버린 경우"></option> -->
+                                <option value="iPhone, iPad 또는 iPod touch의 암호를 잊어버렸거나 iPhone이 비활성화된 경우"></option>
+                                <option value="구독 조회, 변경 또는 취소하기"></option>
+                                <option value="iPhone, iPad 또는 iPod touch 업데이트하기"></option>
+                                <option value="문의하기 Apple 지원"></option>
+                                <!-- </div> -->
+                            </datalist>
+                            
+                            <img class="main-search-engine-image" src="./icons/search-icon-customized.svg" alt="search bar"/>
+                        </fieldset>
+                    </form>
+                </div>
+                <!-- <div class="main-service-banner-image"></div> -->
+            </div>
+            <div class="main-service">
+                <ul class="main-service-products">
+                    <!-- 질문3: 여기서 ul 태그가 porducts면 아래 li 태그는 product로 끝내는게 좋을까유? 
+                        해결안: li 태그에 있는 class 값은 지우자요! -->
+                    <li>
+                        <!-- <a href="#"> -->
+                            <div class="main-service-products-image">
+                                <img class="iPhone-image" src="./icons/iPhone-customized.png" alt="iPhone 지원 목록">
+                            </div>
+                            <span>iPhone</span>
+                        <!-- </a> -->
+                    </li>
+                    <li>
+                        <!---- <a href="#"> -->
+                        <div class="main-service-products-image">
+                            <img class="Mac-image" src="./icons/Mac-customized.png" alt="Mac 지원 목록">
+                        </div>
+                        <span>Mac</span>
+                        <!-- </a> -->
+                    </li>
+                    <li>
+                        <!-- <a href="#"> -->
+                        <div class="main-service-products-image">
+                            <img class="iPad-image" src="./icons/iPad-customized.png" alt="iPad 지원 목록">
+                        </div>
+                        <span>iPad</span>
+                        <!-- </a> -->
+                    </li>
+                    <li>
+                        <!-- <a href="#"> -->
+                        <div class="main-service-products-image">
+                            <img class="apple-watch-image" src="./icons/apple-watch-customized.png" alt="Apple Watch 지원 목록">
+                        </div>
+                        <span>Watch</span>
+                            <!-- </a> -->
+                    </li>
+                    <li>
+                        <!-- <a href="#"> -->
+                        <div class="main-service-products-image">
+                            <img class="apple-airpods-image" src="./icons/airpods-customized.svg" alt="Aairpods">
+                        </div>
+                        <span>AirPods</span>
+                        <!-- </a> -->
+                    </li>
+                    <li>
+                        <!-- <a href="#"> -->
+                        <div class="main-service-products-image">
+                            <img class="apple-music-image" src="./icons/apple-music-customized.png" alt="Apple Music">
+                        </div>
+                        <span>Music</span>
+                        <!-- </a> -->
+                    </li>
+                </ul>
+            </div>
+            <div class="sub-service">
+                <ul class="sub-service-products">
+                    <li>
+                        <!-- <a href="#"> -->
+                            <div>
+                                <div class="sub-service-product-image">
+                                    <img class="sub-service-forgot-id-or-pw-image" src="./icons/forgot-id-or-pw-customized.png" alt="Apple ID 또는 암호를 잊어버렸으면 클릭하세요">
+                                </div>
+                                <span class="sub-service-product-wrapper">
+                                    <span aria-hidden="true">Apple ID 또는 암호를 잊어버림</span>
+                                    <img class="greater-than-sign-icon" src="./icons/greater-than-sign-icon.svg" alt="greater than sign icon"/>
+                                </span>
+                            </div>
+                        <!-- </a> -->
+                    </li>
+                    <!-- <hr style="border: 1px sollid #ccc; width: 80%;" /> -->
+                    <li>
+                        <!-- <a href="#"> -->
+                            <div>
+                                <div class="sub-service-product-image">
+                                    <img class="sub-service-apple-repairment-image" src="./icons/screw-driver-customized.png" alt="Apple 제품 수리를 원하시면 클리하세요">
+                                </div>
+                                <span class="sub-service-product-wrapper">
+                                    <span aria-hidden="true">Apple 수리</span>
+                                    <img class="greater-than-sign-icon" src="./icons/greater-than-sign-icon.svg" alt="greater than sign icon"/>
+                                </span>
+                            </div>
+                        <!-- </a> -->
+                    </li>
+                    <!-- <hr style="border: 1px sollid #ccc; width: 80%;" /> -->
+                    <li>
+                        <!-- <a href="#"> -->
+                            <div>
+                                <div class="sub-service-product-image">
+                                    <img class="sub-service-billing-and-subscription-image" src="./icons/billing-and-subscription-customized.png" alt="청구 및 구독 관련 사항을 확인하려면 클릭하세요">
+                                </div>
+                                <span class="sub-service-product-wrapper">
+                                    <span aria-hidden="true">청구 및 구독</span>
+                                    <img class="greater-than-sign-icon" src="./icons/greater-than-sign-icon.svg" alt="greater than sign icon"/>
+                                </span>
+                            </div>
+                        <!-- </a> -->
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="main-support-container">
+            <div class="main-support-container-banner">
+                <div class="main-support-banner-image"></div>
+                <div class="main-support-container-banner-content">
+                    <h2>지원받기</h2>
+                    <p>제품을 선택하고 가장 적합한 해결 방법을 확인할 수 있습니다.</p>
+                    <a href="#">지금 시작하기<img class="greater-than-sign-icon" src="./icons/greater-than-sign-icon.svg" alt="greater than sign icon"/></a> 
+                    <a href="#">Apple 지원 앱 다운로드하기<img class="greater-than-sign-icon" src="./icons/greater-than-sign-icon.svg" alt="greater than sign icon"/></a>
+                </div>
+                <!-- 반응형 이미지: 
+                    https://heropy.blog/2019/06/16/html-img-srcset-and-sizes/ 
+                https://developer.mozilla.org/ko/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images-->
+            </div>
+            <div class="main-support-container-applecare">
+                <div class="main-support-image-wrapper"><img src="./icons/applecare-products-customized.png" alt="apple-care"></div>
+                <div class="main-support-container-applecare-content">
+                    <h3>Apple 전문가의 서비스 및 지원</h3>
+                    <p>AppleCare 제품은 Apple 전문가의 기술 지원 및 추가 하드웨어 서비스 옵션을 제공합니다.</p>
+                    <a href="#">AppleCare 플랜에 대해 알아보기<img class="greater-than-sign-icon" src="./icons/greater-than-sign-icon.svg" alt="greater than sign icon"/></a>
+                </div>
+            </div>
+            <div class="main-support-container-question">
+                <h3>질문이 있으십니까?</h3>
+                <p>질문에 대한 답변을 얻을 수 있습니다. Apple 지원 커뮤니티에서 답변을 얻으실 수 있습니다.</p>
+                <a href="#">커뮤니티에 질문하기<img class="greater-than-sign-icon" src="./icons/greater-than-sign-icon.svg" alt="greater than sign icon"/></a>
+            </div>
+            <div class="main-support-container-program">
+                <h3>Apple 서비스 프로그램</h3>
+                <ul>
+                    <li><a href="#">터치 문제가 있는 iPhone 11 디스플레이 모듈 교체 프로그램</a></li>
+                    <li><a href="#">사운드 문제에 대한 AirPods Pro 서비스 프로그램</a></li>
+                    <li><a href="#">빈 화면 문제에 대한 iPad Air (3rd generation) 서비스 프로그램</a></li>
+                    <li><a href="#">15형 MacBook Pro 배터리 리콜 프로그램</a></li>
+                    <li><a href="#">Apple 3구 AC 플러그 어댑터 교환 프로그램</a></li>
+                    <!-- onclick관련 하여 ... https://yoo-hyeok.tistory.com/47 -->
+                    <li><a href="#">모든 프로그램 보기모든 프로그램 보기</a><img class="greater-than-sign-icon" src="./icons/greater-than-sign-icon.svg" alt="greater than sign icon"/></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <!-- 아이디어!!! float: right; 또는 position: fixed; 해서 둥둥 띄울 버튼에 <hgroup>사용해서 heading map이랑 탑으로 올리는 버튼 구현??  -->
+    <!-- 푸터 -->
+    <footer class='footer'>
+        <div class="footer-header">
+            <a href="https://www.apple.com/kr/">
+                <img class="footer-header-apple-logo" src="./icons/footer-header-apple-logo.svg" alt="apple 메인 홈페이지로 이동하시려면 클릭하세요" />
+            </a>
+            <!-- 근데 아래 > 이거는 사실 Img인듯! 커서가 따로 안먹혀요! -->
+            <!-- <span class="footer-header-arrow">></span>  -->
+            <img class="footer-header-arrow" src="./icons/footer-header-arrow.svg" alt="greater than sign icon"/>
+            <span class="footer-header-text">지원</span>
+        </div>
+        <div class="footer-menu">
+            <ul class="footer-menu-list">
+                <li>
+                    <a href="#"><h4>제품 지원</h4><span>+</span></a>
+                    <!-- + 버튼 클릭시 drop down list -->
+                    <!-- <ul>
+                        <li><a href="#">iPhone</a></li>
+                        <li><a href="#">Mac</a></li>
+                        <li><a href="#">iPad</a></li>
+                        <li><a href="#">Watch</a></li>
+                        <li><a href="#">Music</a></li>
+                        <li><a href="#">지원 사이트 맵</a></li>
+                    </ul> -->
+                </li>
+                <li>
+                    <a href="#"><h4>서비스 및 수리</h4><span>+</span></a>
+                    <!-- + 버튼 클릭시 drop down list -->
+                    <!-- <ul>
+                        <li><a href="#">Apple 수리 옵션</a></li>
+                        <li><a href="#">서비스 및 수리 정보</a></li>
+                        <li><a href="#">ApplceCare 제품</a></li>
+                        <li><a href="#">하드웨어 보증</a></li>
+                        <li><a href="#">소프트웨어 사용권 계약</a></li>
+                        <li><a href="#">무상 지원</a></li>
+                    </ul> -->
+                </li>
+                <li>
+                    <a href="#"><h4>리소스</h4><span>+</span></a>
+                    <!-- + 버튼 클릭시 drop down list -->
+                    <!-- <ul>
+                        <li><a href="#">다운로드</a></li>
+                        <li><a href="#">설명서</a></li>
+                        <li><a href="#">기술 사양</a></li>
+                        <li><a href="#">손쉬운 사용</a></li>
+                        <li><a href="#">비즈니스</a></li>
+                    </ul> -->
+                </li>
+                <li>
+                    <a href="#"><h4>Connect</h4><span>+</span></a>
+                    <!-- + 버튼 클릭시 drop down list -->
+                    <!-- <ul>
+                        <li><a href="#">Apple에 문의</a></li>
+                        <li><a href="#">전화번호</a></li>
+                        <li><a href="#">나의 지원</a></li>
+                        <li><a href="#">Apple 지원 앱</a></li>
+                        <li><a href="#">Apple 지원 커뮤니티</a></li>
+                    </ul> -->
+                </li>
+            </ul>
+        </div>
+        <div class="footer-legal">
+            <div class="footer-country"><a href="https://support.apple.com/choose-country-region">대한민국</a></div>
+            <div class="footer-address">
+                <!-- <address>Copyright &copy; 2021 Apple Inc. 모드 권리 보유.</address> 
+                https://developer.mozilla.org/ko/docs/Web/HTML/Element/address -->
+                <!-- 덧붙이는 글이나, 저작권과 법픂 표기 등의 작은 텍스트를 나타내는 요소:  
+                https://developer.mozilla.org/ko/docs/Web/HTML/Element/small -->
+                <small>Copyright &copy; 2021 Apple Inc. 모든 권리 보유.</small>
+                <ul class="footer-address-footer">
+                    <li><a href="#">개인정보 처리방침</a></li>
+                    <li><a href="#">사용약관</a></li>
+                    <li><a href="#">판매 및 환불</a></li>
+                    <li><a href="#">사이트 맵</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
