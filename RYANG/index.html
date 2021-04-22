@@ -18,22 +18,22 @@
     <!-- 검색엔진에서 검색할 홈페이지의 키워드 표시 -->
     <meta name="Keywords" content="애플제품, 애플고객지원서비스" />
     <!-- 웹사이트의 주제를 표시 -->
-    <meta name="Description" content=""도움이 필요하신 경우 언제든지 Apple 지원에 문의하십시오." />
+    <meta name="Description" content = "도움이 필요하신 경우 언제든지 Apple 지원에 문의하십시오." />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
-    <link rel="stylesheet" href="./apple-clone.css">
+    <link rel="stylesheet" href="./css/apple-clone.css">
 </head>
 <body>
     <!-- 해더 -->
     <header class='header'>
-        <h1 class='a11y-hidden'></h1>
+        <h1 class="a11y-hidden">헤더</h1>
         <nav class="header-nav">
             <ul class="header-nav-container">
-                <li>
+                <li class="header-nav-apple-logo">
                     <!-- <a href="#" class="a11y-hidden">apple logo<i class="fab fa-apple"></i></a> -->
-                    <a class="header-nav-clickable-space" href="https://www.apple.com/kr/" role="button" aria-label="Go to main homepage"><img class="header-nav-apple-logo-image" src="./icons/apple-logo.svg" /></a>
+                    <a class="header-nav-clickable-space" href="https://www.apple.com/kr/" role="button" aria-label="Go to main homepage"><img class="header-nav-apple-logo-image" src="./icons/apple-logo.svg" alt="Go to main homepage"/></a>
                 </li>
-                <li>
-                    <a class="header-nav-clickable-space" href="#" role="button" aria-label="Open hidden header nav menu"><img class="header-nav-menu-image" src="./icons/hamburger-menu-bar-customized.png" /></a>
+                <li class="header-nav-menu">
+                    <a class="header-nav-clickable-space" href="#" role="button" aria-label="Open hidden header nav menu"><img class="header-nav-menu-image" src="./icons/hamburger-menu-bar-customized.png" alt="header nav menu image"/></a>
                     <!-- hidden sliding side bar -> show when hamburger icon is onclicked -->
                     <!-- <ul class="header-nav-menu-list">
                         <input id="header-nav-search-engine" type="text" placeholder="지원 검색하기" /> -->
@@ -60,8 +60,8 @@
                         <li><a href="#">고객지원</a></li> 
                     </ul >-->
                 </li>
-                <li>
-                    <a class="header-nav-clickable-space" href="#" role="button" aria-label="Show items in shopping cart"><img class="header-nav-shopping-bag-image shadow-effect" src="./icons/shopping-bag-customized.svg" /></a>
+                <li class="header-nav-shopping">
+                    <a class="header-nav-clickable-space" href="#" role="button" aria-label="Show items in shopping cart"><img class="header-nav-shopping-bag-image shadow-effect" src="./icons/shopping-bag-customized.svg" alt="Show items in shopping cart"/></a>
                 </li>
             </ul>
         </nav>
@@ -74,15 +74,27 @@
                 <!-- 아니면: img>map>area ??? 
                 cf. https://rgy0409.tistory.com/2881 -->
                 <div class="main-service-banner-bgr-img-div"></div>
-                <h2>Apple 지원에 오신 것을 환영합니다</h2>
-                <form action="#">
-                    <fieldset>
-                        <legend class="search-engine-legend">지원 검색하기</legend>
-                        <input class="main-search-engine" type="search"/>
-                        <!-- <div class="main-search-engine-image"></div> -->
-                        <img class="main-search-engine-image" src="./icons/search-icon-customized.svg" />
-                    </fieldset>
-                </form>
+                <div class="main-service-banner-search">
+                    <h2>Apple 지원에 오신 것을 환영합니다</h2>
+                    <form action="#" method="get">
+                        <fieldset>
+                            <legend class="search-engine-legend a11y-hidden">지원 검색하기</legend>
+                            <input class="main-search-engine" type="search" placeholder="지원 검색하기"/>
+                            <!-- <div class="main-search-engine-image"></div> -->
+                            <datalist id="quick-link">
+                                <h3>빠른 링크</h3>
+                                <div>
+                                    <option value="Apple ID 암호를 잊어버린 경우"></option>
+                                    <option value="iPhone, iPad 또는 iPod touch의 암호를 잊어버렸거나 iPhone이 비활성화된 경우"></option>
+                                    <option value="구독 조회, 변경 또는 취소하기"></option>
+                                    <option value="iPhone, iPad 또는 iPod touch 업데이트하기"></option>
+                                    <option value="문의하기 Apple 지원"></option>
+                                </div>
+                            </datalist>
+                            <img class="main-search-engine-image" src="./icons/search-icon-customized.svg" alt="search bar"/>
+                        </fieldset>
+                    </form>
+                </div>
                 <!-- <div class="main-service-banner-image"></div> -->
             </div>
             <div class="main-service">
@@ -91,37 +103,50 @@
                         해결안: li 태그에 있는 class 값은 지우자요! -->
                     <li>
                         <!-- <a href="#"> -->
+                            <div class="main-service-products-image">
+                                <img class="iPhone-image" src="./icons/iPhone-customized.png" alt="iPhone 지원 목록">
+                            </div>
                             <span>iPhone</span>
-                            <img class="iPhone-image" src="./icons/iPhone-customized.png" alt="iPhone 지원 목록">
                         <!-- </a> -->
                     </li>
                     <li>
-                        <!-- <a href="#"> -->
-                            <span>Mac</span>
+                        <!---- <a href="#"> -->
+                        <div class="main-service-products-image">
                             <img class="Mac-image" src="./icons/Mac-customized.png" alt="Mac 지원 목록">
+                        </div>
+                        <span>Mac</span>
                         <!-- </a> -->
                     </li>
                     <li>
                         <!-- <a href="#"> -->
-                            <span>iPad</span>
+                        <div class="main-service-products-image">
                             <img class="iPad-image" src="./icons/iPad-customized.png" alt="iPad 지원 목록">
+                        </div>
+                        <span>iPad</span>
                         <!-- </a> -->
                     </li>
                     <li>
                         <!-- <a href="#"> -->
-                            <span>Watch</span><img class="apple-watch-image" src="./icons/apple-watch-customized.png" alt="Apple Watch 지원 목록">
-                        <!-- </a> -->
+                        <div class="main-service-products-image">
+                            <img class="apple-watch-image" src="./icons/apple-watch-customized.png" alt="Apple Watch 지원 목록">
+                        </div>
+                        <span>Watch</span>
+                            <!-- </a> -->
                     </li>
                     <li>
                         <!-- <a href="#"> -->
-                            <span>AirPods</span>
+                        <div class="main-service-products-image">
                             <img class="apple-airpods-image" src="./icons/airpods-customized.svg" alt="Aairpods">
+                        </div>
+                        <span>AirPods</span>
                         <!-- </a> -->
                     </li>
                     <li>
                         <!-- <a href="#"> -->
-                            <span>Music</span>
+                        <div class="main-service-products-image">
                             <img class="apple-music-image" src="./icons/apple-music-customized.png" alt="Apple Music">
+                        </div>
+                        <span>Music</span>
                         <!-- </a> -->
                     </li>
                 </ul>
@@ -132,27 +157,33 @@
                         해결안: li 태그에 있는 class 값은 지우자요! -->
                     <li>
                         <!-- <a href="#"> -->
-                            <div OnClick="location.href ="#" style="cursor:pointer;">
+                            <div>
+                                <div class="sub-service-product-image">
+                                    <img class="sub-service-forgot-id-or-pw-image" src="./icons/forgot-id-or-pw-customized.png" alt="Apple ID 또는 암호를 잊어버렸으면 클릭하세요">
+                                </div>
                                 <span class="sub-service-product-wrapper">Apple ID 또는 암호를 잊어버림</span>
-                                <img class="sub-service-forgot-id-or-pw-image" src="./icons/forgot-id-or-pw-customized.png" alt="Apple ID 또는 암호를 잊어버렸으면 클릭하세요">
                             </div>
                         <!-- </a> -->
                     </li>
                     <!-- <hr style="border: 1px sollid #ccc; width: 80%;" /> -->
                     <li>
                         <!-- <a href="#"> -->
-                            <div OnClick="location.href ="#" style="cursor:pointer;">
+                            <div>
+                                <div class="sub-service-product-image">
+                                    <img class="sub-service-apple-repairment-image" src="./icons/screw-driver-customized.png" alt="Apple 제품 수리를 원하시면 클리하세요">
+                                </div>
                                 <span class="sub-service-product-wrapper">Apple 수리</span>
-                                <img class="sub-service-apple-repairment-image" src="./icons/screw-driver-customized.png" alt="Apple 제품 수리를 원하시면 클리하세요">
                             </div>
                         <!-- </a> -->
                     </li>
                     <!-- <hr style="border: 1px sollid #ccc; width: 80%;" /> -->
                     <li>
                         <!-- <a href="#"> -->
-                            <div OnClick="location.href ="#" style="cursor:pointer;">
+                            <div>
+                                <div class="sub-service-product-image">
+                                    <img class="sub-service-billing-and-subscription-image" src="./icons/billing-and-subscription-customized.png" alt="청구 및 구독 관련 사항을 확인하려면 클릭하세요">
+                                </div>
                                 <span class="sub-service-product-wrapper">청구 및 구독</span>
-                                <img class="sub-service-billing-and-subscription-image" src="./icons/billing-and-subscription-customized.png" alt="청구 및 구독 관련 사항을 확인하려면 클릭하세요">
                             </div>
                         <!-- </a> -->
                     </li>
@@ -166,7 +197,7 @@
                     <h2>지원받기</h2>
                     <p>제품을 선택하고 가장 적합한 해결 방법을 확인할 수 있습니다.</p>
                     <a href="#">지금 시작하기</a> 
-                    <a href="#">Apple 지원 앱 다운로드하기</a>
+                    <a href="#">Apple 지원 앱 다운로드하기<img class="greater-than-sign-icon" src="/icons/greater-than-sign-icon.svg" alt="greater than sign icon"/></a>
                 </div>
                 <!-- 반응형 이미지: 
                     https://heropy.blog/2019/06/16/html-img-srcset-and-sizes/ 
@@ -177,16 +208,16 @@
                 <div class="main-support-container-applecare-content">
                     <h3>Apple 전문가의 서비스 및 지원</h3>
                     <p>AppleCare 제품은 Apple 전문가의 기술 지원 및 추가 하드웨어 서비스 옵션을 제공합니다.</p>
-                    <a href="#">AppleCare 플랜에 대해 알아보기</a>
+                    <a href="#">AppleCare 플랜에 대해 알아보기<img class="greater-than-sign-icon" src="./icons/greater-than-sign-icon.svg" alt="greater than sign icon"/></a>
                 </div>
             </div>
             <div class="main-support-container-question">
                 <h3>질문이 있으십니까?</h3>
                 <p>질문에 대한 답변을 얻을 수 있습니다. Apple 지원 커뮤니티에서 답변을 얻으실 수 있습니다.</p>
-                <a href="#">커뮤니티에 질문하기</a>
+                <a href="#">커뮤니티에 질문하기<img class="greater-than-sign-icon" src="./icons/greater-than-sign-icon.svg" alt="greater than sign icon"/></a>
             </div>
             <div class="main-support-container-program">
-                <h3>Apple 서비스 프로그램</h3>
+                <h3>Apple 서비스 프로그램</h3>
                 <ul>
                     <li><a href="#">터치 문제가 있는 iPhone 11 디스플레이 모듈 교체 프로그램</a></li>
                     <li><a href="#">사운드 문제에 대한 AirPods Pro 서비스 프로그램</a></li>
@@ -207,8 +238,7 @@
                 <img class="footer-header-apple-logo" src="./icons/footer-header-apple-logo.svg" alt="apple 메인 홈페이지로 이동하시려면 클릭하세요" />
             </a>
             <!-- 근데 아래 > 이거는 사실 Img인듯! 커서가 따로 안먹혀요! -->
-            <!-- <span class="footer-header-arrow">></span>  -->
-            <span class="footer-header-text" />지원</span>
+            <span class="footer-header-text">지원</span>
         </div>
         <div class="footer-menu">
             <ul class="footer-menu-list">
@@ -269,9 +299,9 @@
                 https://developer.mozilla.org/ko/docs/Web/HTML/Element/small -->
                 <small>Copyright &copy; 2021 Apple Inc. 모든 권리 보유.</small>
                 <ul class="footer-address-footer">
-                    <li><a href="#">개인정보 처리방침</a></li><span>|</span>
-                    <li><a href="#">사용약관</a></li><span>|</span>
-                    <li><a href="#">판매 및 환불</a></li><span>|</span>
+                    <li><a href="#">개인정보 처리방침</a></li>
+                    <li><a href="#">사용약관</a></li>
+                    <li><a href="#">판매 및 환불</a></li>
                     <li><a href="#">사이트 맵</a></li>
                 </ul>
 
