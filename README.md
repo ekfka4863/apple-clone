@@ -12,7 +12,7 @@
 <br>
 
 📌 개발 기간 📆 : 
-- 2021.03. - 2021.04.   
+- 2021.03.12.금요일 - 2021.04..요일   
 
 📌 팀 명: 
 - 팀감자탕   
@@ -34,12 +34,13 @@
 ### Front-End
 - `HTML`
 - `CSS`
-- `Vanilla JavaScript`
+- `JavaScript`
 - `Git`
 
 ### 협업 Tool
 - `Slack`
 - `Github`
+- `Figma`
 
 <br>
 <br>
@@ -55,7 +56,7 @@
 
 <br>
 
-[데모 영상 Link](http: )
+[데모 영상 Link](https:// )
 
 <br>
 <br>
@@ -73,35 +74,28 @@
 
 [Header Section]
 
-✅ nav 바  
-✅ 장바구니 
+✅ nav 메뉴  
+✅ 장바구니 메뉴  
 
 <br>
 
 [Main Section]
 
-✅ 이미지 호버시 그림자 효과 
+✅ 지원 검색하기 input 태그에 **semantic tag**인 `datalist`를 적용 
 
 <br>
 
-[Footer Section]
+<!-- [Footer Section] -->
+[기타]
 
-✅ footer 섹션에 또 다른 보조 nav바
-
-<br>
-<br>
-
-## 💡 담당한 부분
--
--
--
--
+✅ 페이지 위치와 관계없이 웹사이트의 최상단과 최하단으로 바로 이동 할 수 있는 버튼 구현
 
 <br>
 <br>
+<br>
 
-## 💡 기록하고 싶은 코드/ 기존 웹사이트에는 없던 추가 기능 
-- 페이지 위치와 관계 없이 페이지의 최상단으로 이동하는 버튼 구현
+## 💡 기존 웹사이트에는 없는 추가 기능 
+- 페이지 위치와 관계없이 페이지의 최상단과 최하단으로 이동하는 버튼 구현
 
 <br>
 <br>
