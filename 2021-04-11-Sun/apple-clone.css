@@ -1,5 +1,4 @@
-	list-style-type: none;
-}
+@import "reset.css";
 
 /* common css */
 .a11y-hidden { 
@@ -11,58 +10,212 @@
 	margin: -1px; 
 	border: 0; padding: 0; 
 	}
+	
+	body {
+		font-size: 17px;
+		line-height: 1.5;
+		font-weight: 400;
+		color: #333;
+		font-family: "SF Pro KR", "SF Pro Display", "SF Pro Icons", "Apple Gothic",
+			"HY Gulim", "MalgunGothic", "HY Dotum", "Lexi Gulim", "Helvetica Neue",
+			"Helvetica", "Arial", sans-serif;
+	}
+	
+	body *,
+	body *::before,
+	body *::after {
+		box-sizing: border-box;
 
-/* 해더 */
-.header{
-	background-color: rgba(0, 0, 0, 0.850);
+/* header */
+.header {
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.85);
+  position: relative;
+}
+
+.header-nav {
+  position: absolute;
+  height: 48px;
+  background-color: rgba(0, 0, 0, 0.85);
+  width: 100%;
 }
 .header-nav-container{
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
-.header-nav-container > li{
-	width: 45px;
-	height: 45px;
-	position: relative;	
+.header-nav-container li {
+  text-align: center;
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  vertical-align: middle;
+  z-index: 3;
 }
-.header-nav-clickable-space{
-	position: absolute;
-	width: 45px;
-	height: 45px;
-}
-
-/* Header - 각 로고들이 크기가 다르기 때문에 각자 width, height, padding을 다르게 적용시킨다. */
-.header-nav-apple-logo-image{
-	width: 18px;
-	height: 20px;
-	padding: 12px 14px 13px 13px;
-}
-.header-nav-menu-image{
-	width: 30px;
-	height: 30px;
-	padding: 7px 8px 8px 7px;
-}
-.header-nav-shopping-bag-image{
-	width: 18px;
-	height: 20px;
-	padding: 12px 13px 13px 14px;
+.header-nav-container li:nth-child(3) {
+  z-index: 1;
 }
 
-.header-nav-container > li:nth-child(2){
-	order: -1;
+.header-nav-container img {
+  width: 20px;
+  height: 48px;
 }
-/* header의 이미지를 hover 했을 때 효과 */
-/* .shadow-effect:hover {    --> 이거는 좀 더 알아보기! 
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 100%;
+
+.header-nav-apple-logo {
+  left: calc(50% - 24px);
+}
+
+.header-nav-shopping-bag-image {
+  width: 18px;
+}
+
+.header-nav-menu {
+  left: 0;
+}
+
+.header-nav-menu img {
+  width: 25px;
+  height: 40px;
+}
+
+.header-nav-shopping {
+  right: 0;
+}
+
+/* 해더 - 사이드바 메뉴 */
+/* sidebar menu */
+
+.header-nav-menu-list-outer-wrapper {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: none;
+  /* https://css-tricks.com/forums/topic/100-height-sidebar/ */
+  /* display: none; */
+}
+
+.active {
+  display: block;
+  /* position: fixed;
 	width: 100%;
-	opacity: 0.5;
-	transition: .5s ease;
-	filter: drop-shadow(2px rgba(0,0,0,0.23)) invert(75%);
-} */
+	top: 0;
+	bottom: 0; */
+  /* height: 100%; */
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+.header-nav-menu-list-inner-wrapper {
+  height: 100px;
+  border-bottom: 1px solid rgba(146, 146, 146, 0.5);
+  padding-top: 48px;
+  /* position: relative; */
+}
+.header-nav-menu-list-inner-wrapper img{
+	/* filter: invert(99%) sepia(9%) saturate(86%) hue-rotate(107deg) brightness(118%) contrast(100%); */
+	filter: invert(92%) sepia(9%) saturate(0%) hue-rotate(222deg) brightness(92%) contrast(84%);
+	width: 18px;
+	margin: 12px 0 0 35px;
+	display: block;
+	opacity: 0.7;
+
+}
+#header-nav-search-engine {
+  position: absolute;
+  left: 5%;
+  top: 6%;
+  border: none;
+  height: 38px;
+  width: 90%;
+  border-radius: 9px;
+  background-color: rgba(101, 101, 101, 0.3);
+  padding-left: 35px;
+}
+#header-nav-search-engine:focus {
+  outline: none;
+}
+.header-nav-menu-list {
+  margin: 0 40px;
+}
+.header-nav-menu-list li {
+  border-bottom: 1px solid rgba(146, 146, 146, 0.5);
+  width: 100%;
+  line-height: 44px;
+}
+.header-nav-menu-list li:last-child {
+  border: none;
+}
+.header-nav-menu-list a {
+  display: block;
+  margin: 0 5px;
+  text-decoration: none;
+  color: rgba(222, 222, 222, 0.85);
+  font-size: 1.05rem;
+  font-weight: 300;
+  font-family: "SF Pro KR", "SF Pro Display", "SF Pro Icons", "Apple Gothic",
+    "HY Gulim", "MalgunGothic", "HY Dotum", "Lexi Gulim", "Helvetica Neue",
+    "Helvetica", "Arial", sans-serif;
+}
+.header-nav-menu-list a:hover {
+  color: rgb(255, 255, 255, 0.6);
+  font-size: 1.1rem;
+  transition: ease 0.2s;
+}
+
+
+/* 해더 - 쇼핑 리스트 메뉴 */
+
+.header-nav-shopping-list-outer-wrapper{
+	background-color: rgba(49, 49, 49, 0.4);
+	position: fixed;
+  width: 100%;
+  top: 43px;
+  bottom: 0;
+  overflow: hidden;
+  display: none;
+}
+.header-nav-shopping-list-inner-wrapper{
+	/* background-color:#616060; */
+	background-color:#ffffff;
+	width: 100%;
+	height: 410px;
+}
+.shopping-list{
+	text-align: center;
+	height: 100px;
+	padding-top: 40px;
+	font-size: 0.8rem;
+	color: rgb(133, 133, 133);
+	/* border-bottom: 1px solid #ccc; */
+}
+.shopping-list-menu{
+	margin: 0 50px;
+}
+.shopping-list-menu li{
+	/* text-align: center; */
+	border-bottom: 1px solid #ccc;
+	line-height: 52px;
+	font-size: 0.85rem;
+}
+.shopping-list-menu li:first-child{
+	border-top: 1px solid #ccc;
+}
+.shopping-list-menu li:last-child{
+	border: none;
+}
+.shopping-list-menu a{
+	text-decoration: none;
+	color: rgb(43, 122, 196);
+	font-weight: 400;
+}
+.shopping-list-menu i{
+	padding-right: 10px;
+}
+.flex {
+	display: block;
+	z-index: 2;
+}
 
 
 /* 메인 - 1st section */
@@ -270,10 +423,10 @@ fieldset{
 .sub-service-products li:nth-child(3)::after{
 	border: none;
 }
-.sub-service-product-wrapper::after, .main-support-container-banner-content a::after, 
-.main-support-container-applecare-content a::after, .main-support-container-question a::after, 
-.main-support-container-program li:nth-child(6) a::after, .footer-header-text::before {
+.sub-service-product-wrapper::after{
 	content: ">";
+	width: 15px;
+	height: 15px;
 }
 .sub-service-forgot-id-or-pw-image{
 	width: 43px;

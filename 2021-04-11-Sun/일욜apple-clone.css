@@ -1,35 +1,32 @@
 @import "reset.css";
 
-.a11y-hidden {
-  overflow: hidden;
-  position: absolute;
-  clip: rect(0 0 0 0);
-  /* IE 6,7 */
-  /* clip: rect(0,0,0,0);  */
-  /* cf. https://lovediv.tistory.com/2  */
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-}
+/* common css */
+.a11y-hidden { 
+	overflow: hidden; 
+	position: absolute; 
+	clip: rect(0 0 0 0); 
+	width: 1px; 
+	height: 1px; 
+	margin: -1px; 
+	border: 0; padding: 0; 
+	}
+	
+	body {
+		font-size: 17px;
+		line-height: 1.5;
+		font-weight: 400;
+		color: #333;
+		font-family: "SF Pro KR", "SF Pro Display", "SF Pro Icons", "Apple Gothic",
+			"HY Gulim", "MalgunGothic", "HY Dotum", "Lexi Gulim", "Helvetica Neue",
+			"Helvetica", "Arial", sans-serif;
+	}
+	
+	body *,
+	body *::before,
+	body *::after {
+		box-sizing: border-box;
 
-body {
-  font-size: 17px;
-  line-height: 1.5;
-  font-weight: 400;
-  color: #333;
-  font-family: "SF Pro KR", "SF Pro Display", "SF Pro Icons", "Apple Gothic",
-    "HY Gulim", "MalgunGothic", "HY Dotum", "Lexi Gulim", "Helvetica Neue",
-    "Helvetica", "Arial", sans-serif;
-}
-
-body *,
-body *::before,
-body *::after {
-  box-sizing: border-box;
-}
-/* 헤더 */
+/* header */
 .header {
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.85);
@@ -426,10 +423,10 @@ fieldset{
 .sub-service-products li:nth-child(3)::after{
 	border: none;
 }
-.sub-service-product-wrapper::after{
+.sub-service-product-wrapper::after, .main-support-container-banner-content a::after, 
+.main-support-container-applecare-content a::after, .main-support-container-question a::after, 
+.main-support-container-program li:nth-child(6) a::after, .footer-header-text::before {
 	content: ">";
-	width: 15px;
-	height: 15px;
 }
 .sub-service-forgot-id-or-pw-image{
 	width: 43px;
