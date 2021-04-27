@@ -596,6 +596,22 @@ body *::after {
 }
 
 
+/* footer에서 플러스 아이콘 누르면 오픈되는 메뉴 */
+/* .plus-icon-to-show-menu{}
+.footer-menu-hidden{
+}
+.footer-menu-hidden li{
+  display: none;
+}
+.footer-menu-hidden:first-child li{
+  display: block;
+  background-color: aqua;
+  padding: 10px;
+}
+.footer-menu-hidden a{
+
+} */
+
 
 
 
